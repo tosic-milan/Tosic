@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tosic_PremiumVendors::first_level_nav"
+             module="Tosic_PremiumVendors"
+             sortOrder="20"
+             resource="Magento_Backend::content"
+             title="Premium vendors"/>
+        <add id="Tosic_PremiumVendors::second_level_demo"
+             module="Tosic_PremiumVendors"
+             sortOrder="22"
+             parent="Tosic_PremiumVendors::first_level_nav"
+             resource="Magento_Backend::content"
+             action="premiumvendors/vendors/index"
+             title="Vendor"/>
+    </menu>
+
+
+</config>
