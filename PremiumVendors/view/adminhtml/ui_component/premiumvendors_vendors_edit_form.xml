@@ -70,36 +70,36 @@
                 </item>
             </argument>
         </field>
-        <field name="address">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Address</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                </item>
-            </argument>
-        </field>
-        <field name="lat">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Lat</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                </item>
-            </argument>
-        </field>
-        <field name="long">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Long</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                </item>
-            </argument>
-        </field>
+<!--        <field name="address">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="label" xsi:type="string">Address</item>-->
+<!--                    <item name="visible" xsi:type="boolean">true</item>-->
+<!--                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                    <item name="formElement" xsi:type="string">input</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </field>-->
+<!--        <field name="lat">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="label" xsi:type="string">Lat</item>-->
+<!--                    <item name="visible" xsi:type="boolean">true</item>-->
+<!--                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                    <item name="formElement" xsi:type="string">input</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </field>-->
+<!--        <field name="long">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="label" xsi:type="string">Long</item>-->
+<!--                    <item name="visible" xsi:type="boolean">true</item>-->
+<!--                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                    <item name="formElement" xsi:type="string">input</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </field>-->
         <field name="premium" formElement="select">
             <settings>
                 <dataType>boolean</dataType>

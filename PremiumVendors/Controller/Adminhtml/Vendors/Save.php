@@ -20,13 +20,30 @@ class Save extends Action
         $this->_resultPageFactory = $pageFactory;
     }
 
+    private function IsNullOrEmptyString($str){
+        return (!isset($str) || trim($str) === '');
+    }
+
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
         $values = $data['sample_fieldset'];
+        $tempAddressValue = "";
+        if(!$this->IsNullOrEmptyString($values['country']))
+        {
+            $tempAddressValue .= $values['country'] .", ";
+        }
+        if(!$this->IsNullOrEmptyString($values['city']))
+        {
+            $tempAddressValue .= $values['city'] .", ";
+        }
+        if(!$this->IsNullOrEmptyString($values['street']))
+        {
+            $tempAddressValue .= $values['street'];
+        }
+        $tempAddressValue = rtrim($tempAddressValue, ',');
         $model = $this->_vendorFactory->create();
-
-        $url = 'http://nominatim.openstreetmap.org/search?format=json&q='. urlencode($values['address']) .'&addressdetails=1';
+        $url = 'https://nominatim.openstreetmap.org/search?format=json&q='. urlencode($tempAddressValue) .'&addressdetails=1';
         $options = array(
             'http' => array(
                 'header'  => "Content-type: application/x-www-form-urlencoded\r\n",

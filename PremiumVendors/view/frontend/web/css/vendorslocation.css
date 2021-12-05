@@ -1,0 +1,26 @@
+#vendor-filter-div{
+    border: solid 3px darkred;
+    margin: 20px;
+    padding: 20px;
+    width: 70%;
+}
+
+#info-table {
+    width: 500px;
+    border: 1px solid black;
+    margin: 20px;
+    background-color: lightgray;
+    color: black;
+}
+
+#map-div{
+    height: 400px;
+    width: 80%;
+}
+
+vendor-info-div {
+    height: 400px;
+    width: 80%;
+}
+
+
