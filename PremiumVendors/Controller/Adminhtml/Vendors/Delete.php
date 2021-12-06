@@ -16,7 +16,11 @@ class Delete extends Action
     protected $_vendorFactory;
     protected $_request;
 
-
+    /**
+     * @param \Magento\Backend\App\Action\Context
+     * @param Magento\Framework\View\Result\PageFactory
+     * @param \Magento\Framework\App\Request\Http
+     */
     public function __construct(Context $context, PageFactory $pageFactory, VendorFactory $vendorFactory, Http $request)
     {
         parent::__construct($context);
@@ -26,6 +30,12 @@ class Delete extends Action
         $this->_request = $request;
     }
 
+
+    /**
+     * Delete Vendor action
+     *
+     * @return \Magento\Framework\Controller\Result\Redirect
+     */
     public function execute()
     {
         $id = $this->_request->getParam('id');

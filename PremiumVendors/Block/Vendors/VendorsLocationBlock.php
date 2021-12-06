@@ -15,6 +15,9 @@ class VendorsLocationBlock  extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
+    /**
+     * Get list of vendors to been displayed on map
+    */
     public function getVendorsJSON(): string
     {
         $vendors = $this->_vendorsFactory->create();

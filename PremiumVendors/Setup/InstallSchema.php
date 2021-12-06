@@ -5,14 +5,22 @@ namespace Tosic\PremiumVendors\Setup;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 
+/**
+ * Create PremiumVendor module DB Schema
+ */
 class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
-
+    /**
+     * {@inheritDoc}
+    */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $installer = $setup;
         $installer->startSetup();
             if(!$installer->tableExists('tosic_premiumvendors_vendor')){
+                /**
+                 * Create table `tosic_premiumvendors_vendor`
+                */
                 $table = $installer->getConnection()->newTable(
                     $installer->getTable('tosic_premiumvendors_vendor')
                 )

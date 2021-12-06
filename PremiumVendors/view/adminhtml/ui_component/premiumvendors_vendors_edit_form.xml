@@ -103,20 +103,21 @@
         <field name="premium" formElement="select">
             <settings>
                 <dataType>boolean</dataType>
-                <label translate="true">Premium</label>
+                <label translate="true">Show on map</label>
                 <dataScope>premium</dataScope>
             </settings>
             <formElements>
                 <select>
                     <settings>
                         <options>
+
                             <option name="0" xsi:type="array">
-                                <item name="value" xsi:type="string">0</item>
-                                <item name="label" xsi:type="string">No</item>
-                            </option>
-                            <option name="1" xsi:type="array">
                                 <item name="value" xsi:type="string">1</item>
                                 <item name="label" xsi:type="string">Yes</item>
+                            </option>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">0</item>
+                                <item name="label" xsi:type="string">No</item>
                             </option>
                         </options>
                     </settings>

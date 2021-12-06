@@ -49,6 +49,8 @@ function getLatLongFromAddress() {
 }
 
 function addMarker(vendor){
+    if(vendor.premium === "0")
+        return;
     const marker = new google.maps.Marker({
         position: { lat: Number(vendor.lat), lng: Number(vendor.long) },
         map: map,
@@ -59,7 +61,6 @@ function addMarker(vendor){
         if(vendor.premium === "1") {
             elementVendorInfo.innerText = '';
             elementVendorInfo.appendChild(createTable(vendor));
-
         } else {
             elementVendorInfo.innerText = "";
         }

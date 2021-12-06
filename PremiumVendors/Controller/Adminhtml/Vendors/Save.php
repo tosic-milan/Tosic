@@ -19,15 +19,27 @@ class Save extends Action
         $this->_vendorFactory = $vendorFactory;
         $this->_resultPageFactory = $pageFactory;
     }
-
+    /**
+     *  Check if str is Null or empty
+     *
+    */
     private function IsNullOrEmptyString($str){
         return (!isset($str) || trim($str) === '');
     }
 
+    /**
+     * Save Vendor action
+     *
+     * @return \Magento\Framework\Controller\Result\Redirect
+     */
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
         $values = $data['sample_fieldset'];
+        /**
+         * Create text to query location for set Address
+         * [Country], [City], [Street]
+         */
         $tempAddressValue = "";
         if(!$this->IsNullOrEmptyString($values['country']))
         {
@@ -43,6 +55,9 @@ class Save extends Action
         }
         $tempAddressValue = rtrim($tempAddressValue, ',');
         $model = $this->_vendorFactory->create();
+        /**
+         * Call external API for location by address
+        */
         $url = 'https://nominatim.openstreetmap.org/search?format=json&q='. urlencode($tempAddressValue) .'&addressdetails=1';
         $options = array(
             'http' => array(
@@ -54,11 +69,13 @@ class Save extends Action
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { /* Handle error */ }
-        $decoded = json_decode($result, true);
-        $lat = $decoded[0]["lat"];
-        $lng = $decoded[0]["lon"];
-        $values['lat'] = $lat;
-        $values['long'] = $lng;
+        else {
+            $decoded = json_decode($result, true);
+            $lat = $decoded[0]["lat"];
+            $lng = $decoded[0]["lon"];
+            $values['lat'] = $lat;
+            $values['long'] = $lng;
+        }
         $model->setData($values);
         $model->save();
         return $this->resultRedirectFactory->create()->setPath('*/*/index');
